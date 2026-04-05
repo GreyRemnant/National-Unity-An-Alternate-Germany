@@ -247,12 +247,12 @@ set-jump: post_election
 on-arrival: {!
 // set congress proportion to votes
 Q.spd_r = Q.spd_votes;
-Q.cdu_r = Q.z_votes;
-Q.sapd_r = Q.kpd_votes;
-Q.aspd_r = Q.ddp_votes;
-Q.lvp_r = Q.dvp_votes;
-Q.dkp_r = Q.dnvp_votes;
-Q.ndpd_r = Q.nsdap_votes;
+Q.cdu_r = Q.cdu_votes;
+Q.sapd_r = Q.sapd_votes;
+Q.aspd_r = Q.aspd_votes;
+Q.lvp_r = Q.lvp_votes;
+Q.dkp_r = Q.dkp_votes;
+Q.ndpd_r = Q.nspd_votes;
 Q.other_r = Q.other_votes;
 
 // The largest party can only be the NSDAP or the SPD.
@@ -275,7 +275,7 @@ Q.left_coalition = Q.spd_r + Q.sapd_r;
 // this is an absurd concept lol
 Q.united_front_coalition = Q.spd_r + Q.sapd_r + Q.cdu_r + Q.aspd_r - 3;
 Q.anti_democratic_coalition = Q.sapd_r + Q.ndpd_r;
-// aka everyone except nazi, kpd, dnvp
+// aka everyone except volkist, sapd, dkp
 Q.neo_weimar_coalition = Q.spd_r + Q.aspd_r + Q.cdu_r + Q.lvp_r + Q.other_r;
 !}
 
