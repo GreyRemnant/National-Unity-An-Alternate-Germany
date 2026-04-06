@@ -63,24 +63,24 @@ on-arrival: sapd_relation += 3*(1 - dissent); bernsteinist_dissent += 1
 
 After the events of the Second Blütmai, reconciling with the Socialists is difficult, if not impossible. Nevertheless, we must try.
 
-@center
+@christians
 subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
 on-arrival: resources -= 1; z_relation += 2 if cdu_party_leader == "Joos"
-go-to: center_op if cdu_in_government = 1 and spd_in_government = 0 and chancellor != "Brüning"; center_coalition if spd_in_government = 1 and cdu_in_government = 1; center_bruning if chancellor = "Brüning"
+go-to: christians_op if cdu_in_government = 1 and spd_in_government = 0 and chancellor != "Brüning"; christians_coalition if spd_in_government = 1 and cdu_in_government = 1; christians_bruning if chancellor = "Brüning"
 
-@center_op
+@christians_op
 on-arrival: cdu_relation += 5*(1 - dissent)
 
-We are currently in opposition to the Center-led government, but that does not preclude the general building of feelings of good will.
+We are currently in opposition to the CDU-led government, but that does not preclude the general building of feelings of good will.
 
-@center_coalition
+@christians_coalition
 on-arrival: cdu_relation += 8*(1 - dissent)
 
 We are currently coalition partners with them, so improving relations comes naturally.
 
-@center_bruning
+@christians_bruning
 on-arrival: cdu_relation += 5*(1 - dissent)
 
 The Brüning semi-autocratic regime makes building friendly relations difficult, but not impossible.
