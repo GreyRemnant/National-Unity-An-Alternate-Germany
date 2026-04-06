@@ -6,7 +6,7 @@ go-to: post_event if started = 1; start_menu if started = 0
 new-page: true
 go-to: start_menu_2
 
-= Social Democracy: An Alternate History
+= National Unity: An Alternate Germany
 
 @start_menu_2
 
@@ -46,7 +46,7 @@ Q.dissent = 0.05;
 Q.dissent_percent = 5;
 
 // factions
-Q.factions = ['left', 'center', 'labor', 'reformist', 'neorevisionist'];
+Q.factions = ['left', 'center', 'labor', 'bernsteinist', 'evolutionarysocialist'];
 // should this be normalized to 100%?
 Q.left_strength = 15;
 Q.left_dissent = 20;
@@ -54,10 +54,10 @@ Q.center_strength = 30;
 Q.center_dissent = 0;
 Q.labor_strength = 25;
 Q.labor_dissent = 5;
-Q.reformist_strength = 25;
-Q.reformist_dissent = 5;
-Q.neorevisionist_strength = 5;
-Q.neorevisionist_dissent = 10;
+Q.bernsteinist_strength = 25;
+Q.bernsteinist_dissent = 5;
+Q.evolutionarysocialist_strength = 5;
+Q.evolutionarysocialist_dissent = 10;
 
 // secret events...
 Q.unions_independent = 0;
@@ -101,21 +101,20 @@ Q.moderate_plan_adopted = 0;
 // organizations
 
 // inter-party relations
-Q.z_relation = 50;
-Q.kpd_relation = 25;
-Q.ddp_relation = 60;
-Q.dvp_relation = 35;
-// DNVP and NSDAP are invariably hostile
-Q.DNVP_relation = 10;
-Q.NSDAP_relation = 0;
+Q.cdu_relation = 50;
+Q.sapd_relation = 30;
+Q.aspp_relation = 30;
+Q.lvp_relation = 60;
+// NDPD is invariably hostile. Gotta find a way to make different DkP leaders and allat, makes it possible for a moderate conservative DkP or smth.
+Q.DkP_relation = 10;
+Q.NDPD_relation = 0;
 
-Q.kpd_leader = "Thälmann";
-// alternative is the Conciliators as party leader
-Q.kpd_party_leader = "Thälmann";
-Q.z_leader = "Brüning";
+Q.sapd_leader = "Seydewitz";
+Q.sapd_party_leader = "Seydewitz";
+Q.cdu_leader = "Adenauer";
 // party leader - can be Ludwig Kaas, Joseph Joos, or Adam Stegerwald after the 1928 December conference. Joos will be most friendly to the SPD.
-Q.z_party_leader = "Marx";
-Q.nsdap_leader = "Hitler";
+Q.cdu_party_leader = "Adenauer";
+Q.ndpd_leader = "Thadden";
 
 // hmm... maybe we can play nice with Hindenburg???
 Q.hindenburg_relation = 25;
@@ -125,12 +124,12 @@ Q.hindenburg_enabled = 0;
 
 // Does the SPD lead in Prussia?
 Q.spd_prussia = 1;
-// Options: spd, z, dnvp, papen, nsdap
+// Options: spd, cdu, dkp, papen, ndpd
 Q.prussian_government = "SPD";
 
 // The array of forces - paramilitary groups
 // Number of members in 1928 (in thousands)
-// Reichsbanner, stahlhelm, SA, rotfrontkämpferbund
+// Reichsbanner, stahlhelm, OT, rotfrontkämpferbund
 Q.rb_strength = 2000;
 Q.rb_militancy = 0.01;
 Q.women_in_rb = 0;
@@ -139,10 +138,10 @@ Q.sh_strength = 500;
 Q.sh_militancy = 0.5;
 Q.sh_banned = 0;
 Q.sh_banned_prussia = 0;
-Q.sa_strength = 80;
-Q.sa_militancy = 0.5;
-Q.sa_banned = 0;
-Q.sa_banned_prussia = 0;
+Q.ot_strength = 80;
+Q.ot_militancy = 0.5;
+Q.ot_banned = 0;
+Q.ot_banned_prussia = 0;
 Q.rfb_strength = 130;
 Q.rfb_militancy = 0.5;
 Q.rfb_banned = 0;
@@ -184,8 +183,8 @@ Q.constructive_vonc = 0;
 Q.presidential_powers = 0;
 // allows banning of non-constitutional parties
 Q.constitutional_protection = 0;
-Q.kpd_banned = 0;
-Q.nsdap_banned = 0;
+Q.sapd_banned = 0;
+Q.ndpd_banned = 0;
 
 // coups and capital strikes happen when you upset the right or the capitalists too much with your policies. they're an additional check on your policies, when purely electoral checks don't suffice.
 // when coup_progress reaches 10 or capital_strike_progress reaches 10, there's a special event that launches the coup.
@@ -228,62 +227,62 @@ Q.old_middle_qol = 100;
 Q.new_middle_qol = 100;
 
 Q.classes = ['workers', 'old_middle', 'new_middle', 'rural', 'unemployed', 'catholics'];
-Q.parties = ['spd', 'kpd', 'z', 'ddp', 'dvp', 'dnvp', 'nsdap', 'other'];
+Q.parties = ['spd', 'sapd', 'cdu', 'aspd', 'lvp', 'dkp', 'ndpd', 'other'];
 
 // Support for party by social group
 // they don't have to sum to 100 since the electoral calculations will be normalized.
 Q.workers_spd = 60;
-Q.workers_kpd = 20;
-Q.workers_z = 5;
-Q.workers_ddp = 0;
-Q.workers_dvp = 0;
-Q.workers_dnvp = 5;
-Q.workers_nsdap = 0;
+Q.workers_sapd = 20;
+Q.workers_cdu = 5;
+Q.workers_aspd = 0;
+Q.workers_lvp = 0;
+Q.workers_dkp = 5;
+Q.workers_ndpd = 0;
 Q.workers_other = 10;
 
 Q.old_middle_spd = 5;
-Q.old_middle_kpd = 0;
-Q.old_middle_z = 5;
-Q.old_middle_ddp= 10;
-Q.old_middle_dvp = 25;
-Q.old_middle_dnvp = 25;
-Q.old_middle_nsdap = 10;
+Q.old_middle_sapd = 0;
+Q.old_middle_cdu = 5;
+Q.old_middle_aspd= 10;
+Q.old_middle_lvp = 25;
+Q.old_middle_dkp = 25;
+Q.old_middle_ndpd = 10;
 Q.old_middle_other = 10;
 
 Q.new_middle_spd = 5;
-Q.new_middle_kpd = 1;
-Q.new_middle_z = 10;
-Q.new_middle_ddp= 25;
-Q.new_middle_dvp = 25;
-Q.new_middle_dnvp = 10;
-Q.new_middle_nsdap = 5;
+Q.new_middle_sapd = 1;
+Q.new_middle_cdu = 10;
+Q.new_middle_aspd = 25;
+Q.new_middle_lvp = 25;
+Q.new_middle_dkp = 10;
+Q.new_middle_ndpd = 5;
 Q.new_middle_other = 15;
 
 Q.rural_spd = 10;
-Q.rural_kpd = 0;
-Q.rural_z = 5;
-Q.rural_ddp= 5;
-Q.rural_dvp = 15;
-Q.rural_dnvp = 45;
-Q.rural_nsdap = 5;
+Q.rural_sapd = 0;
+Q.rural_cdu = 5;
+Q.rural_aspd = 5;
+Q.rural_lvp = 15;
+Q.rural_dkp = 45;
+Q.rural_ndpd = 5;
 Q.rural_other = 10;
 
 Q.unemployed_spd = 25;
-Q.unemployed_kpd = 55;
-Q.unemployed_z = 1;
-Q.unemployed_ddp = 0;
-Q.unemployed_dvp = 0;
-Q.unemployed_dnvp = 5;
-Q.unemployed_nsdap = 15;
+Q.unemployed_sapd = 55;
+Q.unemployed_cdu = 1;
+Q.unemployed_aspd = 0;
+Q.unemployed_lvp = 0;
+Q.unemployed_dkp = 5;
+Q.unemployed_ndpd = 15;
 Q.unemployed_other = 9;
 
 Q.catholics_spd = 15;
-Q.catholics_kpd = 2;
-Q.catholics_z = 50;
-Q.catholics_ddp = 0;
-Q.catholics_dvp = 5;
-Q.catholics_dnvp = 5;
-Q.catholics_nsdap = 0;
+Q.catholics_sapd = 2;
+Q.catholics_cdu = 50;
+Q.catholics_aspd = 0;
+Q.catholics_lvp = 5;
+Q.catholics_dkp = 5;
+Q.catholics_ndpd = 0;
 Q.catholics_other = 12;
 
 
@@ -294,22 +293,22 @@ Q.catholics_other = 12;
 // since they were ideologically similar, but they were separate parties.
 // They did not have a CDU/CSU-style relationship.
 Q.spd_r = 26;
-Q.kpd_r = 9;
-Q.z_r = 17;
-Q.ddp_r = 6;
-Q.dvp_r = 10;
-Q.dnvp_r = 20;
-Q.nsdap_r = 3;
+Q.sapd_r = 9;
+Q.cdu_r = 17;
+Q.aspd_r = 6;
+Q.lvp_r = 10;
+Q.dkp_r = 20;
+Q.ndpd_r = 3;
 Q.other_r = 9;
 
 // diff from prev
 Q.old_spd_r = 26;
-Q.old_kpd_r = 9;
-Q.old_z_r = 17;
-Q.old_ddp_r = 6;
-Q.old_dvp_r = 10;
-Q.old_dnvp_r = 20;
-Q.old_nsdap_r = 3;
+Q.old_sapd_r = 9;
+Q.old_cdu_r = 17;
+Q.old_aspd_r = 6;
+Q.old_lvp_r = 10;
+Q.old_dkp_r = 20;
+Q.old_ndpd_r = 3;
 Q.old_other_r = 9;
 
 // array of objects of the form {date: Date(), spd: 10, kpd: 12, ...} for each election
@@ -321,27 +320,27 @@ Q.economic_records = [];
 
 
 // State of the government
-Q.president = "Hindenburg";
-// starting chancellor: Wilhelm Marx
-Q.chancellor = "Marx";
-Q.chancellor_party = 'Z';
+Q.president = "Wilhelm Michael";
+// starting chancellor: Oskar von Hindenburg
+Q.chancellor = "Hindenburg";
+Q.chancellor_party = 'CDU';
 Q.spd_in_government = 0;
-Q.z_in_government = 1;
-Q.ddp_in_government = 0;
-Q.dvp_in_government = 1;
-Q.dnvp_in_government = 1;
-Q.kpd_in_government = 0;
-Q.nsdap_in_government = 0;
+Q.cdu_in_government = 1;
+Q.aspd_in_government = 1;
+Q.lvp_in_government = 0;
+Q.dkp_in_government = 1;
+Q.sapd_in_government = 0;
+Q.ndpd_in_government = 0;
 
 Q.in_right_coalition = 0;
-// Weimar coalition = SPD + Z + DDP
+// Weimar coalition = SPD + CDU + LVP
 Q.in_weimar_coalition = 0;
-// Grand coalition = SPD + Z + BVP + DDP + DVP
-// also includes the "new grand coalition" of SPD + Z + BVP + DDP + DVP + Others
+// Grand coalition = SPD + CDU + BVP + ASPD + LVP
+// also includes the "new grand coalition" of SPD + CDU + BVP + ASPD + LVP + Others
 Q.in_grand_coalition = 0;
-// Popular front = SPD + KPD + Z + DDP
+// Popular front = SPD + SAPD + CDU + LVP
 Q.in_popular_front = 0;
-// left coalition = SPD + KPD + left-splinters
+// left coalition = SPD + SAPD + left-splinters
 Q.in_left_front = 0;
 // emergency government containing the SPD: only president Braun can do this.
 Q.in_emergency_government = 0;
@@ -354,7 +353,7 @@ Q.in_minority_government = 0;
 // if you're in a coalition, this is an incremental counter for how many times dissent has happened from the right.
 Q.coalition_dissent = 0;
 // dissent from the KPD, in a popular front or left front government
-Q.kpd_coalition_dissent = 0;
+Q.sapd_coalition_dissent = 0;
 
 // does the SPD tolerate the government even if it is not a participant?
 Q.spd_toleration = 0;
@@ -365,22 +364,22 @@ Q.minority_government = 0;
 // ministries - which parties control the ministries?
 // starting with the 4th Marx cabinet https://en.wikipedia.org/wiki/Fourth_Marx_cabinet
 // is the agricultural ministry useful at all?
-Q.foreign_minister = 'Streseman';
-Q.foreign_minister_party = 'DVP';
-Q.interior_minister = 'von Keudell';
-Q.interior_minister_party = 'DNVP';
-Q.justice_minister = 'Hergt';
-Q.justice_minister_party = 'DNVP';
-Q.labor_minister = 'Brauns';
-Q.labor_minister_party = 'Z';
-Q.reichswehr_minister = 'Groener';
-Q.reichswehr_minister_party = 'I';
-Q.economic_minister = 'Curtius';
-Q.economic_minister_party = 'DVP';
-Q.finance_minister = 'Köhler';
-Q.finance_minister_party = 'Z';
-Q.agriculture_minister = 'Schiele';
-Q.agriculture_minister_party = 'DNVP';
+Q.foreign_minister = 'von Brentano';
+Q.foreign_minister_party = 'CDU';
+Q.interior_minister = 'Papen';
+Q.interior_minister_party = 'DkP';
+Q.justice_minister = 'von Wilmowsky';
+Q.justice_minister_party = 'DkP';
+Q.labor_minister = 'Ehrenberg';
+Q.labor_minister_party = 'ASPD';
+Q.reichswehr_minister = 'Strauss';
+Q.reichswehr_minister_party = 'CDU';
+Q.economic_minister = 'Goerdeler';
+Q.economic_minister_party = 'DkP';
+Q.finance_minister = 'Mollath';
+Q.finance_minister_party = 'Other';
+Q.agriculture_minister = 'Niklas';
+Q.agriculture_minister_party = 'CDU';
 
 // Events: what has occurred?
 Q.panzerkreuzer_seen = 0;
@@ -518,9 +517,9 @@ Q.coalition_affairs_timer = 0;
 // event timers
 Q.emergency_cuts_timer = 0;
 Q.unemployment_insurance_timer = 0;
-Q.sa_ban_timer = 0;
+Q.ot_ban_timer = 0;
 Q.sh_ban_timer = 0;
-Q.kpd_ultimatum_timer = 0;
+Q.sapd_ultimatum_timer = 0;
 Q.march_on_berlin_timer = 0;
 
 
@@ -583,11 +582,11 @@ For more information on the politics and government of the German Republic, see 
 - @1928_historical: Begin (historical mode)
 
 @1928_easy
-on-arrival: difficulty = -1; resources = 4; dues = 3; rb_strength = 2500; kpd_relation = 29; z_relation = 54; dvp_relation = 49; budget = 5;
+on-arrival: difficulty = -1; resources = 4; dues = 3; rb_strength = 2500; sapd_relation = 29; cdu_relation = 54; lvp_relation = 49; budget = 5;
 go-to: 1928_main
 
 @1928_hard
-on-arrival: difficulty = 1; resources = 0; dues = 1; rb_strength = 1000; reformist_dissent = 25; left_dissent = 30; labor_dissent = 25; center_dissent = 25; z_relation = 41; kpd_relation = 16; dvp_relation = 31; budget = 3;
+on-arrival: difficulty = 1; resources = 0; dues = 1; rb_strength = 1000; reformist_dissent = 25; left_dissent = 30; labor_dissent = 25; center_dissent = 25; cdu_relation = 41; sapd_relation = 16; lvp_relation = 31; budget = 3;
 go-to: 1928_main
 
 @1928_historical
@@ -602,9 +601,9 @@ Q.reformist_dissent = 25;
 Q.left_dissent = 30;
 Q.labor_dissent = 25;
 Q.center_dissent = 25;
-Q.z_relation = 41;
-Q.kpd_relation = 16;
-Q.dvp_relation = 31;
+Q.cdu_relation = 41;
+Q.sapd_relation = 16;
+Q.lvp_relation = 31;
 Q.budget = 2;
 this.state.disableSaves = true;
 !}
@@ -617,8 +616,8 @@ go-to: main if difficulty >= 0; main.main_easy if difficulty < 0
 
 = 1928
 
-It is a bright time for German democracy. After a period of struggle, inflation is finally under control, and the economy is expanding steadily. In foreign policy, we have reached agreements with the Western powers and the Soviet Union that might make genuine peace a reality. 
+It is a worrying time for German democracy. After a period of struggle, the legacy of August Winnig's semi-democratic reforms have held, the economy is expanding steadily, and the ruling coalition is nearly fractured. In foreign policy, we have reached agreements with the Western powers and the Soviet Union that might make genuine peace a reality. 
 
-Now, the task of Social Democracy is to prepare for the next election. The bourgeois-right government of Wilhelm Marx is unpopular, and we stand to gain. Perhaps the next government will have a socialist majority.
+Now, the task of Social Democracy is to prepare for the next election. The Große Querfront government of Oskar von Hindenburg is unpopular, and we stand to gain. Perhaps the next government will have a Socialist majority, or at least a republican one.
 
 

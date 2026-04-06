@@ -257,11 +257,11 @@ Q.other_r = Q.other_votes;
 
 // The largest party can only be the NSDAP or the SPD.
 Q.largest_party = 'SPD';
-if (Q.nsdap_r >= Q.spd_r && Q.nsdap_r >= Q.kpd_r) {
-    Q.largest_party = 'NSDAP';
+if (Q.ndpd_r >= Q.spd_r && Q.ndpd_r >= Q.sapd_r) {
+    Q.largest_party = 'NDPD';
 }
-if (Q.kpd_r >= Q.spd_r && Q.kpd_r >= Q.nsdap_r) {
-    Q.largest_party = 'KPD';
+if (Q.sapd_r >= Q.spd_r && Q.sapd_r >= Q.ndpd_r) {
+    Q.largest_party = 'SAPD';
 }
 
 // coalitions
