@@ -24,7 +24,7 @@ subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
 on-arrival: resources -= 1; sapd_inter_party_seen += 1
-go-to: kpd_blutmai if blutmai = 1; kpd_1 if blutmai = 0 and kpd_coalition_success = 0 and (kpd_relation < 40 or kpd_rectified_history = 1); kpd_rectification_of_history if kpd_relation >= 40 and kpd_rectified_history = 0; kpd_2 if kpd_coalition_success = 1 and kpd_rectified_history = 1
+go-to: sapd_blutmai if blutmai = 1; sapd_1 if blutmai = 0 and sapd_coalition_success = 0 and (sapd_relation < 40 or sapd_rectified_history = 1); sapd_rectification_of_history if sapd_relation >= 40 and sapd_rectified_history = 0; sapd_2 if sapd_coalition_success = 1 and sapd_rectified_history = 1
 
 @sapd_1
 on-arrival: sapd_relation += 6*(1 - dissent); communist_coalition += 1 if sapd_inter_party_seen <= 1; bernsteinist_dissent += 2; cdu_relation -= 2; lvp_relation -= 3
@@ -61,7 +61,7 @@ After the success of the coalition government with the SAPD, they are much more 
 @sapd_blutmai
 on-arrival: sapd_relation += 3*(1 - dissent); bernsteinist_dissent += 1
 
-After the events of Blütmai, reconciling with the Socialists is difficult, if not impossible. Nevertheless, we must try.
+After the events of the Second Blütmai, reconciling with the Socialists is difficult, if not impossible. Nevertheless, we must try.
 
 @center
 subtitle: -1 resources
