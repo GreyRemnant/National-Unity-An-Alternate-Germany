@@ -339,7 +339,7 @@ data = [
         "name": "SAPD",
         "seats": Q.sapd_r*5,
     }];
-=}
+
 data = data.concat([
     {
         "id": "spd",
