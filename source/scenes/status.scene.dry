@@ -77,7 +77,7 @@ Economic growth: [+ economic_growth_2 +]%
 
 {!<span class="tooltip-text" title="Christian Democratic Union">CDU</span>!}: [+ cdu_relation : relationships +]
 
-{!<span class="tooltip-text" title="Old Social Democratic Party">ASPD!</span>!}: [+ aspd_relation : relationships +]
+{!<span class="tooltip-text" title="Old Social Democratic Party">ASPD</span>!}: [+ aspd_relation : relationships +]
 
 {!<span class="tooltip-text" title="Liberal People's Party">LVP</span>!}: [+ lvp_relation : relationships +]
 
