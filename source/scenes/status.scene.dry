@@ -161,15 +161,15 @@ SPD: [+ spd_votes +]%
 
 ASPD: [+ aspd_votes +]%
 
-CDU + BVP: [+ z_votes +]%
+CDU + BVP: [+ cdu_votes +]%
 
-SAPD: [+ kpd_votes +]%   
+SAPD: [+ sapd_votes +]%   
 
-LVP: [+ dvp_votes +]%
+LVP: [+ lvp_votes +]%
 
-DkP: [+ dnvp_votes +]%
+DkP: [+ dkp_votes +]%
 
-NDPD: [+ nsdap_votes +]%
+NDPD: [+ ndpd_votes +]%
 
 Others: [+ other_votes +]%
 
