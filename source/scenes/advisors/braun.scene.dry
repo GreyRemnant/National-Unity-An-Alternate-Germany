@@ -7,6 +7,8 @@ new-page: true
 
 = Otto Braun
 
+//note to self, have Braun executed for dying before game start. SAD!
+
 Braun [? if spd_prussia = 1 : is ?][? if spd_prussia = 0 : was ?] the Minister-President of Prussia, the largest state in Germany. He is a reformist leader who seeks to work with the bourgeois parties.
 
 - @coalition
